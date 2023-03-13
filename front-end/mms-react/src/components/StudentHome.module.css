@@ -1,0 +1,18 @@
+.column {
+  margin-top: 200px;
+}
+
+.space {
+  margin: 4px;
+}
+.paysalary {
+  width: 50%;
+}
+
+.failstatus {
+  color: red;
+}
+
+.successStatus {
+  color: greenyellow;
+}

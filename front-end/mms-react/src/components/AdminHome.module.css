@@ -1,0 +1,24 @@
+.navbar {
+  width: auto;
+  text-align: right;
+  padding: 20px;
+  background-color: lightblue;
+}
+
+.main {
+  width: 100%;
+  height: 100%;
+}
+
+.container {
+  text-align: center;
+  margin: 320px 400px 320px 400px;
+  padding: 25px;
+  border: 2px solid black;
+}
+
+.ulist1 {
+  text-decoration: none;
+  font-size: large;
+  margin: 50px;
+}

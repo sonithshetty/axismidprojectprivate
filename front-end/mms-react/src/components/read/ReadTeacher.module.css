@@ -1,0 +1,29 @@
+.main {
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+}
+
+.navbar {
+  width: 100%;
+  text-align: right;
+  padding: 20px;
+  background-color: lightblue;
+  z-index: 1;
+}
+
+.status {
+  text-transform: uppercase;
+}
+
+.paysalary {
+  width: auto;
+  /* display: flex;
+  justify-content: center;
+  align-items: center; */
+}
+
+.space {
+  margin: 2px;
+}

@@ -1,0 +1,18 @@
+School Management System 
+  Students
+  Teachers
+  Funds
+
+  like a money Management system for school
+    keep track of Students total fees
+    fees already paid
+    teachers salary
+
+School contains Teachers, Students, Total Money earned, Total Money Spent(teachers salary)
+
+Teacher contains teacherId, name, salary
+
+Student contains id, name, grade, fees paid, total fees
+
+OOP:
+  
