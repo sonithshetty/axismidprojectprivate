@@ -13,6 +13,9 @@ import ReadTeacher from "./components/read/ReadTeacher";
 import ReadStudent from "./components/read/ReadStudent";
 import UpdateTeacher from "./components/update/UpdateTeacher";
 import UpdateStudent from "./components/update/UpdateStudent";
+import PrivateAdmin from "./components/PrivateAdmin";
+import PrivateStudent from "./components/PrivateStudent";
+import PrivateTeacher from "./components/PrivateTeacher";
 
 function App() {
   return (
@@ -20,21 +23,52 @@ function App() {
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/admin-login" element={<AdminLogin />} />
+        <Route
+          path="/admin-home"
+          element={<PrivateAdmin children={<AdminHome />} />}
+        />
+        <Route
+          path="/add-teacher"
+          element={<PrivateAdmin children={<CreateTeacher />} />}
+        />
+        <Route
+          path="/add-student"
+          element={<PrivateAdmin children={<CreateStudent />} />}
+        />
+        <Route
+          path="/show-teacher"
+          element={<PrivateAdmin children={<ReadTeacher />} />}
+        />
+        <Route
+          path="/show-student"
+          element={<PrivateAdmin children={<ReadStudent />} />}
+        />
+        <Route
+          path="/update-teacher"
+          element={<PrivateAdmin children={<UpdateTeacher />} />}
+        />
+        <Route
+          path="/update-student"
+          element={<PrivateAdmin children={<UpdateStudent />} />}
+        />
+        <Route
+          path="/update-student/:id"
+          element={<PrivateAdmin children={<UpdateStudent />} />}
+        />
+        <Route
+          path="/update-teacher/:id"
+          element={<PrivateAdmin children={<UpdateTeacher />} />}
+        />
         <Route path="/student-login" element={<StudentLogin />} />
         <Route path="/teacher-login" element={<TeacherLogin />} />
-        <Route path="/admin-home" element={<AdminHome />} />
-        <Route path="/student-home" element={<StudentHome />} />
-        <Route path="/teacher-home" element={<TeacherHome />} />
-        <Route path="/add-teacher" element={<CreateTeacher />} />
-        <Route path="/add-student" element={<CreateStudent />} />
-        <Route path="/show-teacher" element={<ReadTeacher />} />
-        <Route path="/show-student" element={<ReadStudent />} />
-        <Route path="/update-teacher" element={<UpdateTeacher />} />
-        <Route path="/update-student" element={<UpdateStudent />} />
-        <Route path="/update-student/:id" element={<UpdateStudent />} />
-        <Route path="/update-teacher/:id" element={<UpdateTeacher />} />
-        <Route path="/student-home" element={<StudentHome />} />
-        <Route path="/teacher-home" element={<TeacherHome />} />
+        <Route
+          path="/student-home"
+          element={<PrivateStudent children={<StudentHome />} />}
+        />
+        <Route
+          path="/teacher-home"
+          element={<PrivateTeacher children={<TeacherHome />} />}
+        />
       </Routes>
     </div>
   );

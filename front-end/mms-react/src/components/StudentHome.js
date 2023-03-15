@@ -11,6 +11,7 @@ import {
 } from "semantic-ui-react";
 import { useNavigate } from "react-router-dom";
 import axios from "axios";
+import { logOut } from "./CheckStudentLogin";
 
 const StudentHome = () => {
   let navigate = useNavigate();
@@ -64,48 +65,57 @@ const StudentHome = () => {
     return <div>{btn}</div>;
   }
 
+  const logOutStudent = () => {
+    logOut();
+    navigate("/");
+  };
+
   return (
     <div>
-      <Grid centered columns={6}>
-        <GridColumn className={classes.column}>
-          <Card>
-            <Image src={loginData2.imageUrl} wrapped ui={false} />
-            <Card.Content>
-              <Card.Header>User Details:</Card.Header>
-              <Card.Description>
-                <b>Name:</b> {loginData2.name}
-              </Card.Description>
-              <Card.Description>
-                <b>EmailId:</b> {loginData2.emailId}
-              </Card.Description>
-              <Card.Description>
-                <b>Std:</b> {loginData2.std}
-              </Card.Description>
-              <Card.Description>
-                <b>Fee Status</b>
-                <Icon name="rupee sign" />
-                <ShowStatus value={loginData2.feesPaid} />
-              </Card.Description>
-            </Card.Content>
-            <Card.Content extra>
-              <a>
-                <Icon name="id badge" />
-                Id No : {loginData2.id}
-              </a>
-            </Card.Content>
-            <CardContent textAlign="center">
-              <DisplayButton
-                feesPaid={String(loginData2.feesPaid).toUpperCase()}
-              />
-              <div className={classes.space}></div>
+      <div className={classes.image}></div>
+      <div className={classes.content}>
+        <Card>
+          <Image src={loginData2.imageUrl} wrapped ui={false} />
+          <Card.Content>
+            <Card.Header>User Details:</Card.Header>
+            <Card.Description>
+              <b>Name:</b> {loginData2.name}
+            </Card.Description>
+            <Card.Description>
+              <b>EmailId:</b> {loginData2.emailId}
+            </Card.Description>
+            <Card.Description>
+              <b>Std:</b> {loginData2.std}
+            </Card.Description>
+            <Card.Description>
+              <b>Fee Status</b>
+              <Icon name="rupee sign" />
+              <ShowStatus value={loginData2.feesPaid} />
+            </Card.Description>
+          </Card.Content>
+          <Card.Content extra>
+            <a>
+              <Icon name="id badge" />
+              Id No : {loginData2.id}
+            </a>
+          </Card.Content>
+          <CardContent textAlign="center">
+            <DisplayButton
+              feesPaid={String(loginData2.feesPaid).toUpperCase()}
+            />
+            <div className={classes.space}></div>
 
-              <Button color="red" onClick={() => navigate("/")}>
-                Logout
-              </Button>
-            </CardContent>
-          </Card>
-        </GridColumn>
-      </Grid>
+            <Button
+              color="red"
+              onClick={() => {
+                logOutStudent();
+              }}
+            >
+              Logout
+            </Button>
+          </CardContent>
+        </Card>
+      </div>
     </div>
   );
 };

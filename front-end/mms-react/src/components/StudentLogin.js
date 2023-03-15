@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
 import classes from "./StudentLogin.module.css";
-import { Form, Button } from "semantic-ui-react";
+import { Card, Image, Form, Button } from "semantic-ui-react";
 import { useNavigate } from "react-router-dom";
 import axios from "axios";
 
@@ -37,40 +37,57 @@ const StudentLogin = () => {
   }, []);
 
   return (
-    <div className={classes.main}>
-      <div>
-        <h3>Student Login</h3>
-      </div>
-      <div>
-        <Form>
-          <Form.Field>
-            <label>Email</label>
-            <input
-              required
-              autoComplete="off"
-              name="emailId"
-              type="email"
-              value={emailId}
-              id="emailId"
-              onChange={emailChange}
-              placeholder="Enter your email"
-            />
-          </Form.Field>
-          <Form.Field>
-            <label>Password</label>
-            <input
-              required
-              name="password"
-              type="password"
-              value={password}
-              id="password"
-              onChange={passChange}
-              placeholder="Enter your password"
-            />
-          </Form.Field>
-
-          <Button onClick={submitHandler}>Login</Button>
-        </Form>
+    <div>
+      <div className={classes.main}></div>
+      <div className={classes.content}>
+        <Card>
+          <Image
+            src="https://cdn-icons-png.flaticon.com/512/3048/3048425.png"
+            wrapped
+            ui={false}
+          />
+          <Card.Content>
+            <Card.Header textAlign="center">Student Login</Card.Header>
+            <br />
+            <Card.Meta>
+              <span>Enter Your Credentials</span>
+            </Card.Meta>
+            <Card.Description>
+              <Form>
+                <Form.Field>
+                  <label>Email</label>
+                  <input
+                    required
+                    autoComplete="off"
+                    name="emailId"
+                    type="email"
+                    value={emailId}
+                    id="emailId"
+                    onChange={emailChange}
+                    placeholder="Enter your email"
+                  />
+                </Form.Field>
+                <Form.Field>
+                  <label>Password</label>
+                  <input
+                    required
+                    name="password"
+                    type="password"
+                    value={password}
+                    id="password"
+                    onChange={passChange}
+                    placeholder="Enter your password"
+                  />
+                </Form.Field>
+              </Form>
+            </Card.Description>
+          </Card.Content>
+          <Card.Content extra>
+            <Button fluid color="green" onClick={submitHandler}>
+              Submit
+            </Button>
+          </Card.Content>
+        </Card>
       </div>
     </div>
   );

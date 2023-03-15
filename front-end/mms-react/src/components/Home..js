@@ -1,68 +1,85 @@
-import { Link } from "react-router-dom";
 import classes from "./Home.module.css";
+import { Button, Card, Header } from "semantic-ui-react";
+import { Link } from "react-router-dom";
 
 const Home = () => {
   return (
     <div>
-      <div className={classes.header}>
-        <h1>MONEY MANAGEMENT SYSTEM</h1>
+      <div className={classes.main}></div>
+      <div className={classes.header}></div>
+      <div className={classes.content}>
+        <div className={classes.row}>
+          {/* <div className={classes.column}>
+            <Header textAlign="center" as="h2">
+              Holy Family Convent High School
+            </Header>
+            <p>(Money Management System)</p>
+
+            <p>Vision:</p>
+            <ul>
+              <li>
+                Our vision is to forge strong, positive connections with
+                students so they can achieve independence, build confidence, and
+                gain academic knowledge.
+              </li>
+              <li>
+                We aim to develop well-rounded and thoughtful students prepared
+                to cope with a changing post-modern and globalized world.
+              </li>
+            </ul>
+            <p>Mission:</p>
+            <ul>
+              <li>
+                Our mission is to provide a safe haven where everyone is valued
+                and respected. All staff members, in partnership with parents
+                and families are fully committed to students’ college and career
+                readiness. Students are empowered to meet current and future
+                challenges to develop social awareness, civic responsibility,
+                and personal growth.
+              </li>
+            </ul>
+          </div> */}
+          <div className={classes.column}>
+            <Card.Group className={classes.card}>
+              <Card fluid color="brown">
+                <Card.Content>
+                  <Card.Header textAlign="center">Login</Card.Header>
+                  <br />
+                  <Card.Meta>
+                    For School Admins, Teachers and Students of Holy Family
+                    Convent High School
+                  </Card.Meta>
+                </Card.Content>
+                <Card.Content extra>
+                  <div className="ui four buttons">
+                    <Button.Group>
+                      <Link to={"/admin-login"}>
+                        <Button basic color="black">
+                          Admin
+                        </Button>
+                      </Link>
+                      <Button.Or text="|" />
+                      <Link to={"/teacher-login"}>
+                        <Button basic color="brown">
+                          Teacher
+                        </Button>
+                      </Link>
+                      <Button.Or text="|" />
+                      <Link to={"/student-login"}>
+                        <Button basic color="black">
+                          Student
+                        </Button>
+                      </Link>
+                    </Button.Group>
+                  </div>
+                </Card.Content>
+              </Card>
+            </Card.Group>
+          </div>
+        </div>
       </div>
-      <div className={classes.navbar}>
-        <Link to={"/admin-login"} className={classes.ulist1}>
-          Admin Login
-        </Link>
-
-        <Link to={"/student-login"} className={classes.ulist1}>
-          Student Login
-        </Link>
-
-        <Link to={"/teacher-login"} className={classes.ulist1}>
-          Teacher Login
-        </Link>
-
-        <h4>Sonit Shetty - Axis11JFSB1117</h4>
-      </div>
-      <div className={classes.main}>
-        <h2>About Project</h2>
-        <p>
-          This project helps the school or the admin to track the expense and
-          income occuring in the school fund.
-        </p>
-        <div className={classes.column}>
-          <div className={classes.head}>Admin Page</div>
-          <div className={classes.content}>
-            <section>
-              <p>Functionalities : </p>
-            </section>
-          </div>
-        </div>
-        <div className={classes.column}>
-          <div className={classes.head}>Teacher Page</div>
-          <div className={classes.content}>
-            <section>
-              <p>Functionalities : </p>
-            </section>
-          </div>
-        </div>
-        <div className={classes.column}>
-          <div className={classes.head}>Student Page</div>
-          <div className={classes.content}>
-            <section>
-              <p>Functionalities : </p>
-            </section>
-          </div>
-        </div>
-        <main>
-          <h4>Technologies Used</h4>
-          <section>
-            <h5>Front End : </h5>
-            <p></p>
-          </section>
-          <section>
-            <h5>Back End : </h5>
-            <p></p>
-          </section>
-        </main>
+      <div className={classes.footer}>
+        <strong>By Sonit Harish Shetty (Axis11JFSB1117)</strong>
       </div>
     </div>
   );

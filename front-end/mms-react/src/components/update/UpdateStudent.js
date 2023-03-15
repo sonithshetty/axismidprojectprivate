@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
 import { Link, useNavigate, useParams } from "react-router-dom";
-import { Form, Button } from "semantic-ui-react";
+import { Form, Button, Card, Image } from "semantic-ui-react";
 import classes from "./UpdateStudent.module.css";
 import axios from "axios";
 
@@ -70,92 +70,85 @@ const UpdateStudent = () => {
   };
 
   return (
-    <div className={classes.main}>
-      <div className={classes.navbar}>
-        <h3>Admin Name</h3>
-      </div>
-      <div className={classes.container}>
-        <div className={classes.sidenav}>
-          <Link to={"/show-student"} className={classes.link}>
-            Show Students
-          </Link>
+    <div>
+      <div className={classes.main}></div>
+      <div className={classes.content}>
+        <Card>
+          <Image size="tiny" src={student.imageUrl} wrapped ui={false} />
 
-          <Link to={"/add-teacher"} className={classes.link}>
-            Add Teachers
-          </Link>
-
-          <Link to={"/show-teacher"} className={classes.link}>
-            Show Teachers
-          </Link>
-
-          <Link to={"/admin-login"} className={classes.link}>
-            Logout
-          </Link>
-        </div>
-        <div className={classes.content}>
-          <div>
-            <h3>Update Student details</h3>
-          </div>
-          <div>
-            <Form>
-              {/* <Form.Field>
-                <label>ID</label>
-                <input
-                  type="number"
-                  required
-                  value={student.id}
-                  onChange={(e) => onInputChange(e)}
-                />
-              </Form.Field> */}
-              <Form.Field>
-                <label>Name</label>
-                <input
-                  type="text"
-                  required
-                  value={name}
-                  onChange={(e) => {
-                    setStudent({ ...student, name: e.target.value });
-                  }}
-                />
-              </Form.Field>
-              <Form.Field>
-                <label>Email</label>
-                <input
-                  type="email"
-                  required
-                  value={emailId}
-                  onChange={(e) => {
-                    setStudent({ ...student, emailId: e.target.value });
-                  }}
-                />
-              </Form.Field>
-              <Form.Field>
-                <label>Password</label>
-                <input
-                  type="password"
-                  required
-                  value={password}
-                  onChange={(e) => {
-                    setStudent({ ...student, password: e.target.value });
-                  }}
-                />
-              </Form.Field>
-              <Form.Field>
-                <label>Std</label>
-                <input
-                  type="text"
-                  required
-                  value={std}
-                  onChange={(e) => {
-                    setStudent({ ...student, std: e.target.value });
-                  }}
-                />
-              </Form.Field>
-
-              <Button onClick={(e) => sendDataToAPI(e)}>Submit</Button>
-            </Form>
-          </div>
-        </div>
+          <Card.Content>
+            <Card.Header textAlign="center">Add Student Details</Card.Header>
+            <Card.Meta>
+              <span>Enter Your New Credentials</span>
+            </Card.Meta>
+            <Card.Description>
+              <Form>
+                <Form.Field>
+                  <label>Name</label>
+                  <input
+                    type="text"
+                    required
+                    value={name}
+                    onChange={(e) => {
+                      setStudent({ ...student, name: e.target.value });
+                    }}
+                  />
+                </Form.Field>
+                <Form.Field>
+                  <label>Email</label>
+                  <input
+                    type="email"
+                    required
+                    value={emailId}
+                    onChange={(e) => {
+                      setStudent({ ...student, emailId: e.target.value });
+                    }}
+                  />
+                </Form.Field>
+                <Form.Field>
+                  <label>Password</label>
+                  <input
+                    type="password"
+                    required
+                    value={password}
+                    onChange={(e) => {
+                      setStudent({ ...student, password: e.target.value });
+                    }}
+                  />
+                </Form.Field>
+                <Form.Field>
+                  <label>Std</label>
+                  <input
+                    type="text"
+                    required
+                    value={std}
+                    onChange={(e) => {
+                      setStudent({ ...student, std: e.target.value });
+                    }}
+                  />
+                </Form.Field>
+                <Form.Field>
+                  <label>Image</label>
+                  <input
+                    type="text"
+                    required
+                    onChange={(e) => {
+                      setStudent({ ...student, imageUrl: e.target.value });
+                    }}
+                  />
+                </Form.Field>
+              </Form>
+            </Card.Description>
+          </Card.Content>
+          <Card.Content textAlign="center" extra>
+            <Button inverted color="green" onClick={(e) => sendDataToAPI(e)}>
+              Submit
+            </Button>
+            <Link to={"/show-student"}>
+              <Button color="black">Back</Button>
+            </Link>
+          </Card.Content>
+        </Card>
       </div>
     </div>
   );

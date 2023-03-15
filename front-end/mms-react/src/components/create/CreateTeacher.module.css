@@ -1,56 +1,24 @@
 .main {
-  height: 100vh;
-  display: flex;
-  align-items: center;
-  flex-direction: column;
-}
-
-.navbar {
   width: 100%;
-  text-align: right;
-  padding: 20px;
-  background-color: lightblue;
-  z-index: 1;
-}
-
-.container {
-  width: 100%;
-}
-
-.sidenav {
   height: 100%;
-  width: 250px;
-  position: fixed;
-  z-index: 1;
+  text-align: center;
+  background-image: url("/home/shetty_sonit/manipal axis training/AxisMidProject/front-end/mms-react/src/components/images/add-form.jpg");
+  filter: blur(8px);
+  /* -webkit-filter: blur(0px); */
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  position: absolute;
+  top: 0;
   left: 0;
-  background-color: antiquewhite;
-  overflow-x: hidden;
-  padding-top: 25px;
-}
-
-.sidenav a {
-  text-decoration: none;
-  display: block;
-  padding: 6px 8px 6px 16px;
-  font-size: 20px;
-  color: #818181;
-}
-
-.sidenav a:hover {
-  color: black;
+  z-index: -1;
 }
 
 .content {
-  padding-left: 400px;
-  padding-right: 200px;
-  margin: 250px;
-}
-
-.content h3 {
-  text-align: center;
-  padding: 10px;
-}
-
-.link {
-  text-decoration: none;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  z-index: 2;
 }

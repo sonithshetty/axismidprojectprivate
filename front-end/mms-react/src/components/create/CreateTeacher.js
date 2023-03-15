@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
-import { Form, Button } from "semantic-ui-react";
+import { Form, Button, Header, Card } from "semantic-ui-react";
 import classes from "./CreateTeacher.module.css";
 import axios from "axios";
 
@@ -52,99 +52,90 @@ const CreateTeacher = () => {
   };
 
   return (
-    <div className={classes.main}>
-      <div className={classes.navbar}>
-        <h3>Admin Name</h3>
-      </div>
-      <div className={classes.container}>
-        <div className={classes.sidenav}>
-          <Link to={"/show-student"} className={classes.link}>
-            Show Students
-          </Link>
-
-          <Link to={"/add-student"} className={classes.link}>
-            Add Students
-          </Link>
-
-          <Link to={"/show-teacher"} className={classes.link}>
-            Show Teachers
-          </Link>
-
-          <Link to={"/admin-login"} className={classes.link}>
-            Logout
-          </Link>
-        </div>
-        <div className={classes.content}>
-          <div>
-            <h3>Add Teacher details</h3>
-          </div>
-          <div>
-            <Form>
-              <Form.Field required>
-                <label>ID</label>
-                <input
-                  type="number"
-                  value={id}
-                  onChange={(e) => {
-                    setTeacher({ ...teacher, id: e.target.value });
-                  }}
-                />
-              </Form.Field>
-              <Form.Field required>
-                <label>FirstName</label>
-                <input
-                  type="text"
-                  value={firstName}
-                  onChange={(e) => {
-                    setTeacher({ ...teacher, firstName: e.target.value });
-                  }}
-                />
-              </Form.Field>
-              <Form.Field required>
-                <label>LastName</label>
-                <input
-                  type="text"
-                  value={lastName}
-                  onChange={(e) => {
-                    setTeacher({ ...teacher, lastName: e.target.value });
-                  }}
-                />
-              </Form.Field>
-              <Form.Field required>
-                <label>Email</label>
-                <input
-                  type="email"
-                  required
-                  value={emailId}
-                  onChange={(e) => {
-                    setTeacher({ ...teacher, emailId: e.target.value });
-                  }}
-                />
-              </Form.Field>
-              <Form.Field required>
-                <label>Password</label>
-                <input
-                  type="password"
-                  value={password}
-                  onChange={(e) => {
-                    setTeacher({ ...teacher, password: e.target.value });
-                  }}
-                />
-              </Form.Field>
-              <Form.Field required>
-                <label>Image</label>
-                <input
-                  type="text"
-                  value={imageUrl}
-                  placeholder="Enter your Image Url"
-                  onChange={(e) => {
-                    setTeacher({ ...teacher, imageUrl: e.target.value });
-                  }}
-                />
-              </Form.Field>
-              <Button onClick={(e) => sendDataToAPI(e)}>Submit</Button>
-            </Form>
-          </div>
+    <div>
+      <div className={classes.main}></div>
+      <div className={classes.content}>
+        <div className={classes.form}>
+          <Card>
+            <Card.Content>
+              <Card.Header textAlign="center">Add Teacher Details</Card.Header>
+              <br />
+              <Card.Description>
+                <Form>
+                  <Form.Field required>
+                    <label>ID</label>
+                    <input
+                      type="number"
+                      value={id}
+                      onChange={(e) => {
+                        setTeacher({ ...teacher, id: e.target.value });
+                      }}
+                    />
+                  </Form.Field>
+                  <Form.Field required>
+                    <label>FirstName</label>
+                    <input
+                      type="text"
+                      value={firstName}
+                      onChange={(e) => {
+                        setTeacher({ ...teacher, firstName: e.target.value });
+                      }}
+                    />
+                  </Form.Field>
+                  <Form.Field required>
+                    <label>LastName</label>
+                    <input
+                      type="text"
+                      value={lastName}
+                      onChange={(e) => {
+                        setTeacher({ ...teacher, lastName: e.target.value });
+                      }}
+                    />
+                  </Form.Field>
+                  <Form.Field required>
+                    <label>Email</label>
+                    <input
+                      type="email"
+                      required
+                      value={emailId}
+                      onChange={(e) => {
+                        setTeacher({ ...teacher, emailId: e.target.value });
+                      }}
+                    />
+                  </Form.Field>
+                  <Form.Field required>
+                    <label>Password</label>
+                    <input
+                      type="password"
+                      value={password}
+                      onChange={(e) => {
+                        setTeacher({ ...teacher, password: e.target.value });
+                      }}
+                    />
+                  </Form.Field>
+                  <Form.Field required>
+                    <label>Image</label>
+                    <input
+                      type="text"
+                      value={imageUrl}
+                      placeholder="Enter your Image Url"
+                      onChange={(e) => {
+                        setTeacher({ ...teacher, imageUrl: e.target.value });
+                      }}
+                    />
+                  </Form.Field>
+                </Form>
+              </Card.Description>
+            </Card.Content>
+            <Card.Content textAlign="center" extra>
+              <Button inverted color="green" onClick={(e) => sendDataToAPI(e)}>
+                Submit
+              </Button>
+              <Link to={"/admin-home"}>
+                <Button color="black">Back</Button>
+              </Link>
+            </Card.Content>
+          </Card>
         </div>
       </div>
     </div>
