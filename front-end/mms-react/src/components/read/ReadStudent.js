@@ -153,7 +153,7 @@ const ReadStudent = () => {
                             <li>
                               <b>Fees Paid : </b>
                               {/* {String(student.feesPaid)} */}
-                              <ShowStatus value={String(student.feesPaid)} />
+                              <ShowStatus value={student.feesPaid} />
                             </li>
                           </ul>
                         </Modal.Description>

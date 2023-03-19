@@ -30,3 +30,7 @@
 .successStatus {
   color: greenyellow;
 }
+
+.space {
+  padding: 2px;
+}
